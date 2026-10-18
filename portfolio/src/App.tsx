@@ -10,7 +10,7 @@ import { Slide6Contact } from "./components/slides/Slide6Contact";
 import { ProjectModal } from "./components/ProjectModal";
 import { ContactModal } from "./components/ContactModal";
 import { ProjectData } from "./types";
-import { developerInfo, slidesMeta } from "./data/portfolioData";
+import { developerInfo, sectionsMeta } from "./data/portfolioData";
 import {
   ArrowUp,
   Sparkles,
@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 
 export default function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSection, setCurrentSection] = useState(0);
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(
     null,
   );
@@ -34,10 +34,10 @@ export default function App() {
 
       {/* Top Navigation */}
       <NavigationHeader
-        currentSlide={currentSlide}
-        onSelectSlide={(index) => {
-          setCurrentSlide(index);
-          const target = slidesMeta[index]?.slug;
+        currentSection={currentSection}
+        onSelectSection={(index) => {
+          setCurrentSection(index);
+          const target = sectionsMeta[index]?.slug;
           if (target) {
             document
               .getElementById(target)
@@ -52,7 +52,7 @@ export default function App() {
         <section id="inicio" className="scroll-mt-24 pt-6">
           <Slide1Hero
             onNavigate={(idx) => {
-              const target = slidesMeta[idx]?.slug;
+              const target = sectionsMeta[idx]?.slug;
               if (target) {
                 document
                   .getElementById(target)

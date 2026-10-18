@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { developerInfo, slidesMeta } from "../data/portfolioData";
+import { developerInfo } from "../data/portfolioData";
 import { MessageCircle, Menu, X, Share2, Check } from "lucide-react";
 
 interface NavigationHeaderProps {
-  currentSlide: number;
-  onSelectSlide: (index: number) => void;
+  currentSection: number;
+  onSelectSection: (index: number) => void;
   onOpenContact: () => void;
 }
 
 export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
-  currentSlide,
-  onSelectSlide,
+  currentSection,
+  onSelectSection,
   onOpenContact,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,7 +38,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
         {/* Brand */}
         <div className="flex items-center gap-3">
           <button
-            onClick={() => onSelectSlide(0)}
+            onClick={() => onSelectSection(0)}
             className="flex items-center gap-2 group cursor-pointer text-left"
           >
             <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-slate-950 font-black text-base shadow-[0_0_15px_rgba(0,210,255,0.4)]">
@@ -55,24 +55,7 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
           </button>
         </div>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {slidesMeta.map((slide, index) => (
-            <button
-              key={slide.id}
-              onClick={() => onSelectSlide(index)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
-                currentSlide === index
-                  ? "text-cyan-300 bg-cyan-950/40 border border-cyan-500/40 shadow-[0_0_10px_rgba(0,210,255,0.15)]"
-                  : "text-slate-300 hover:text-white hover:bg-slate-800/40"
-              }`}
-            >
-              {slide.label.replace("Capa / ", "")}
-            </button>
-          ))}
-        </nav>
-
-        {/* Slide Controls & Quick CTAs */}
+        {/* Quick Actions */}
         <div className="flex items-center gap-2">
           <button
             onClick={handleShare}
@@ -113,25 +96,6 @@ export const NavigationHeader: React.FC<NavigationHeaderProps> = ({
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden px-4 pt-2 pb-5 bg-[#050e22] border-b border-cyan-500/30 space-y-3">
-          <div className="grid grid-cols-2 gap-2 pt-1">
-            {slidesMeta.map((slide, index) => (
-              <button
-                key={slide.id}
-                onClick={() => {
-                  onSelectSlide(index);
-                  setMobileMenuOpen(false);
-                }}
-                className={`flex items-center gap-2 p-2.5 rounded-xl text-xs font-medium text-left border ${
-                  currentSlide === index
-                    ? "border-cyan-400 bg-cyan-950/40 text-cyan-300"
-                    : "border-slate-800 bg-[#030814] text-slate-300"
-                }`}
-              >
-                <span>{slide.label}</span>
-              </button>
-            ))}
-          </div>
-
           <div className="pt-2 flex gap-2">
             <button
               onClick={() => {
