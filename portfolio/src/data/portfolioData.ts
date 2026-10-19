@@ -12,8 +12,7 @@ export const developerInfo = {
   role: "Desenvolvedor Fullstack",
   roleLine1: "Desenvolvedor",
   roleLine2: "Fullstack",
-  tagline:
-    "Desenvolvedor de software apaixonado por criar soluções que geram impacto.",
+  tagline: "Desenvolvendo soluções que geram impacto.",
   education: [
     "Formado na faculdade Uniasselvi, em Análise e Desenvolvimento de Sistemas, cursando pós graduação em Arquitetura de Sistemas e Engenharia de Software.",
     "Atuação em todas as etapas do desenvolvimento: da análise à entrega e evolução de produtos.",
