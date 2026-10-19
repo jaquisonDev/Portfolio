@@ -17,6 +17,7 @@ export const developerInfo = {
     "Formado na faculdade Uniasselvi, em Análise e Desenvolvimento de Sistemas, cursando pós graduação em Arquitetura de Sistemas e Engenharia de Software.",
     "Atuação em todas as etapas do desenvolvimento: da análise à entrega e evolução de produtos.",
     "Foco em código limpo, boas práticas no Frontend, quanto no backend.",
+    "web design pelo SENAI, com foco em UI/UX e experiência do usuário.",
     "Amo estar sempre em crescente aprendizagem.",
   ],
   contact: {
