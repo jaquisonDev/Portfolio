@@ -39,7 +39,7 @@ export const developerInfo = {
 
 export const skillsExercised: string[] = [
   "Desenvolvimento web (frontend e backend)",
-  "Programação orientada a objetos",
+  "Web design",
   "Banco de dados e modelagem",
   "Segurança e boas práticas de código",
 ];

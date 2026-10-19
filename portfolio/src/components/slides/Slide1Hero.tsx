@@ -6,7 +6,7 @@ import { ArrowRight, MessageSquareCode, Mail } from "lucide-react";
 
 export const Slide1Hero = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[520px]">
+    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-130">
       {/* Left Text Column */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -49,7 +49,7 @@ export const Slide1Hero = () => {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="lg:col-span-5 flex justify-center lg:justify-end"
       >
-        <div className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px]">
+        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
           <SlideFrame
             src={developerInfo.images.profile}
             alt={developerInfo.name}
