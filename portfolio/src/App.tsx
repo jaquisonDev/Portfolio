@@ -10,7 +10,7 @@ import { Slide6Contact } from "./components/slides/Slide6Contact";
 import { ProjectModal } from "./components/ProjectModal";
 import { ContactModal } from "./components/ContactModal";
 import { ProjectData } from "./types";
-import { developerInfo, sectionsMeta } from "./data/portfolioData";
+import { developerInfo } from "./data/portfolioData";
 import {
   ArrowUp,
   Sparkles,
@@ -29,38 +29,19 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#030712] text-white flex flex-col relative overflow-x-hidden selection:bg-cyan-500/30 selection:text-white">
-      {/* Background ambient lighting and waves */}
-      <BackgroundGlow />
-
-      {/* Top Navigation */}
       <NavigationHeader
         currentSection={currentSection}
-        onSelectSection={(index) => {
-          setCurrentSection(index);
-          const target = sectionsMeta[index]?.slug;
-          if (target) {
-            document
-              .getElementById(target)
-              ?.scrollIntoView({ behavior: "smooth" });
-          }
-        }}
+        onSelectSection={setCurrentSection}
         onOpenContact={() => setIsContactModalOpen(true)}
       />
+
+      {/* Background ambient lighting and waves */}
+      <BackgroundGlow />
 
       <main className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-28 sm:space-y-36">
         {/* Section 1: Início */}
         <section id="inicio" className="scroll-mt-24 pt-6">
-          <Slide1Hero
-            onNavigate={(idx) => {
-              const target = sectionsMeta[idx]?.slug;
-              if (target) {
-                document
-                  .getElementById(target)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            onOpenContact={() => setIsContactModalOpen(true)}
-          />
+          <Slide1Hero />
         </section>
 
         {/* Section 2: Sobre Mim */}

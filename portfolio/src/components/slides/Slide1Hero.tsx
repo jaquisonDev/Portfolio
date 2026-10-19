@@ -4,15 +4,7 @@ import { developerInfo } from "../../data/portfolioData";
 import { SlideFrame } from "../SlideFrame";
 import { ArrowRight, MessageSquareCode, Mail } from "lucide-react";
 
-interface SlideProps {
-  onNavigate?: (slideIndex: number) => void;
-  onOpenContact?: () => void;
-}
-
-export const Slide1Hero: React.FC<SlideProps> = ({
-  onNavigate,
-  onOpenContact,
-}) => {
+export const Slide1Hero = () => {
   return (
     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[520px]">
       {/* Left Text Column */}
