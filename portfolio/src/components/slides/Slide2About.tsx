@@ -85,6 +85,15 @@ export const Slide2About: React.FC = () => {
 
           <div className="flex items-start gap-3">
             <div className="mt-1 p-1 rounded-md bg-cyan-500/10 text-[#00d2ff] shrink-0">
+              <GraduationCap className="w-4 h-4" />
+            </div>
+            <p className="text-slate-300">
+              Web Design pelo SENAI, com foco em UI/UX e experiência do usuário.
+            </p>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="mt-1 p-1 rounded-md bg-cyan-500/10 text-[#00d2ff] shrink-0">
               <BookOpen className="w-4 h-4" />
             </div>
             <p className="text-slate-300">

@@ -54,8 +54,7 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({
       >
         <div className="space-y-2">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Contato e<br />
-            Próximos Passos
+            Contato e Próximos Passos
           </h2>
           <div className="w-12 h-1 bg-[#00d2ff] rounded-full" />
         </div>
