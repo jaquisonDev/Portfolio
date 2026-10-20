@@ -9,6 +9,7 @@ export default defineConfig({
       "@": new URL("./src", import.meta.url).pathname,
     },
   },
+  base: "/portfolio/",
   server: {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.
     // Do not modify—file watching is disabled to prevent flickering during agent edits.
