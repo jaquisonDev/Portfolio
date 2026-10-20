@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { developerInfo } from '../../data/portfolioData';
-import { SlideFrame } from '../SlideFrame';
-import { Mail, Phone, Linkedin, MessageCircle, Copy, Check, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { developerInfo } from "../../data/portfolioData";
+import { SlideFrame } from "../SlideFrame";
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  MessageCircle,
+  Copy,
+  Check,
+  Send,
+} from "lucide-react";
 
 interface Slide6ContactProps {
   onOpenMessageModal?: () => void;
 }
 
-export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal }) => {
+export const Slide6Contact: React.FC<Slide6ContactProps> = ({
+  onOpenMessageModal,
+}) => {
   const [copiedItem, setCopiedItem] = useState<string | null>(null);
 
   const handleCopy = (text: string, label: string) => {
@@ -18,7 +28,23 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center min-h-[520px]">
+    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center min-h-130">
+      {/* Right Column: Portrait Photo */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.15 }}
+        className="lg:col-span-5 flex justify-center lg:justify-end"
+      >
+        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
+          <SlideFrame
+            src={developerInfo.images.profile}
+            alt="Jaquison Souza - Contato"
+            aspect="aspect-[4/5] sm:aspect-[4/5]"
+          />
+        </div>
+      </motion.div>
+
       {/* Left/Middle Content Section */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -28,7 +54,7 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
       >
         <div className="space-y-2">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Contato e<br />Próximos Passos
+            Contato e Próximos Passos
           </h2>
           <div className="w-12 h-1 bg-[#00d2ff] rounded-full" />
         </div>
@@ -50,11 +76,13 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
                   {developerInfo.contact.email}
                 </a>
                 <button
-                  onClick={() => handleCopy(developerInfo.contact.email, 'email')}
+                  onClick={() =>
+                    handleCopy(developerInfo.contact.email, "email")
+                  }
                   title="Copiar e-mail"
                   className="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors"
                 >
-                  {copiedItem === 'email' ? (
+                  {copiedItem === "email" ? (
                     <Check className="w-3.5 h-3.5 text-emerald-400" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
@@ -78,11 +106,13 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
                   {developerInfo.contact.phone}
                 </a>
                 <button
-                  onClick={() => handleCopy(developerInfo.contact.phone, 'phone')}
+                  onClick={() =>
+                    handleCopy(developerInfo.contact.phone, "phone")
+                  }
                   title="Copiar telefone"
                   className="p-1 rounded text-slate-400 hover:text-cyan-400 transition-colors"
                 >
-                  {copiedItem === 'phone' ? (
+                  {copiedItem === "phone" ? (
                     <Check className="w-3.5 h-3.5 text-emerald-400" />
                   ) : (
                     <Copy className="w-3.5 h-3.5" />
@@ -124,7 +154,7 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
                 href={`https://wa.me/${developerInfo.contact.phoneClean}?text=Ol%C3%A1%20Jaquison%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%21`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold text-sm hover:brightness-110 shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-linear-to-r from-emerald-500 to-cyan-500 text-slate-950 font-bold text-sm hover:brightness-110 shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Conversar no WhatsApp</span>
@@ -149,22 +179,6 @@ export const Slide6Contact: React.FC<Slide6ContactProps> = ({ onOpenMessageModal
               )}
             </div>
           </div>
-        </div>
-      </motion.div>
-
-      {/* Right Column: Portrait Photo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="lg:col-span-5 flex justify-center lg:justify-end"
-      >
-        <div className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px]">
-          <SlideFrame
-            src={developerInfo.images.profile}
-            alt="Jaquison Souza - Contato"
-            aspect="aspect-[4/5] sm:aspect-[4/5]"
-          />
         </div>
       </motion.div>
     </div>

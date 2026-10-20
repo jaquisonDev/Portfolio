@@ -1,14 +1,14 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { developerInfo, skillsExercised } from '../../data/portfolioData';
-import { SlideFrame } from '../SlideFrame';
-import { Globe, Code2, Database, ShieldCheck } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { developerInfo, skillsExercised } from "../../data/portfolioData";
+import { SlideFrame } from "../SlideFrame";
+import { Globe, Code2, Database, ShieldCheck } from "lucide-react";
 
 const skillIcons = [Globe, Code2, Database, ShieldCheck];
 
 export const Slide3Skills: React.FC = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[520px]">
+    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-130">
       {/* Left Column: Skills Tree */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -18,7 +18,7 @@ export const Slide3Skills: React.FC = () => {
       >
         <div className="space-y-2">
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Minhas<br />Habilidades
+            Minhas Habilidades
           </h2>
           <div className="w-12 h-1 bg-[#00d2ff] rounded-full" />
         </div>
@@ -30,7 +30,7 @@ export const Slide3Skills: React.FC = () => {
         {/* Vertical Node Timeline */}
         <div className="relative pl-6 sm:pl-8 space-y-4">
           {/* Vertical connecting line */}
-          <div className="absolute left-2.5 sm:left-3 top-4 bottom-4 w-[2px] bg-gradient-to-b from-cyan-400 via-blue-500 to-cyan-400/30" />
+          <div className="absolute left-2.5 sm:left-3 top-4 bottom-4 w-0.5 bg-linear-to-b from-cyan-400 via-blue-500 to-cyan-400/30" />
 
           {skillsExercised.map((skill, index) => {
             const Icon = skillIcons[index % skillIcons.length];
@@ -69,7 +69,7 @@ export const Slide3Skills: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.15 }}
         className="lg:col-span-5 flex justify-center lg:justify-end"
       >
-        <div className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px]">
+        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
           <SlideFrame
             src={developerInfo.images.coding}
             alt="Ambiente de desenvolvimento e programação"

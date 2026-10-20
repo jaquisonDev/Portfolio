@@ -1,17 +1,12 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { developerInfo } from '../../data/portfolioData';
-import { SlideFrame } from '../SlideFrame';
-import { ArrowRight, MessageSquareCode, Mail } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { developerInfo } from "../../data/portfolioData";
+import { SlideFrame } from "../SlideFrame";
+import { ArrowRight, MessageSquareCode, Mail } from "lucide-react";
 
-interface SlideProps {
-  onNavigate?: (slideIndex: number) => void;
-  onOpenContact?: () => void;
-}
-
-export const Slide1Hero: React.FC<SlideProps> = ({ onNavigate, onOpenContact }) => {
+export const Slide1Hero = () => {
   return (
-    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[520px]">
+    <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-130">
       {/* Left Text Column */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -45,42 +40,6 @@ export const Slide1Hero: React.FC<SlideProps> = ({ onNavigate, onOpenContact }) 
             {developerInfo.name}
           </span>
         </div>
-
-        {/* Interactive CTA buttons */}
-        <div className="pt-4 flex flex-wrap items-center gap-3">
-          {onNavigate && (
-            <button
-              id="hero-btn-explore"
-              onClick={() => onNavigate(1)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold text-sm hover:brightness-110 shadow-[0_0_20px_rgba(0,210,255,0.35)] transition-all cursor-pointer"
-            >
-              <span>Ver Apresentação</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          )}
-
-          {onNavigate && (
-            <button
-              id="hero-btn-projects"
-              onClick={() => onNavigate(3)}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-cyan-500/40 text-cyan-300 font-medium text-sm hover:bg-cyan-950/30 hover:border-cyan-400 transition-all cursor-pointer"
-            >
-              <MessageSquareCode className="w-4 h-4" />
-              <span>Ver Projetos</span>
-            </button>
-          )}
-
-          {onOpenContact && (
-            <button
-              id="hero-btn-contact"
-              onClick={onOpenContact}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-700 text-slate-300 font-medium text-sm hover:bg-slate-800/60 hover:text-white transition-all cursor-pointer"
-            >
-              <Mail className="w-4 h-4" />
-              <span>Contato</span>
-            </button>
-          )}
-        </div>
       </motion.div>
 
       {/* Right Image Frame Column */}
@@ -90,7 +49,7 @@ export const Slide1Hero: React.FC<SlideProps> = ({ onNavigate, onOpenContact }) 
         transition={{ duration: 0.6, delay: 0.15 }}
         className="lg:col-span-5 flex justify-center lg:justify-end"
       >
-        <div className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px]">
+        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
           <SlideFrame
             src={developerInfo.images.profile}
             alt={developerInfo.name}

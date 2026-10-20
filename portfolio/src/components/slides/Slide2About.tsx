@@ -7,6 +7,22 @@ import { GraduationCap, Layers, Sparkles, BookOpen } from "lucide-react";
 export const Slide2About: React.FC = () => {
   return (
     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-130">
+      {/* Right Column: Portrait Photo */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: 0.15 }}
+        className="lg:col-span-5 flex justify-center lg:justify-end"
+      >
+        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
+          <SlideFrame
+            src={developerInfo.images.profile}
+            alt="Jaquison Souza - Sobre Mim"
+            aspect="aspect-[4/5] sm:aspect-[4/5]"
+          />
+        </div>
+      </motion.div>
+
       {/* Left Column: Text & Content */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
@@ -69,28 +85,21 @@ export const Slide2About: React.FC = () => {
 
           <div className="flex items-start gap-3">
             <div className="mt-1 p-1 rounded-md bg-cyan-500/10 text-[#00d2ff] shrink-0">
+              <GraduationCap className="w-4 h-4" />
+            </div>
+            <p className="text-slate-300">
+              Web Design pelo SENAI, com foco em UI/UX e experiência do usuário.
+            </p>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="mt-1 p-1 rounded-md bg-cyan-500/10 text-[#00d2ff] shrink-0">
               <BookOpen className="w-4 h-4" />
             </div>
             <p className="text-slate-300">
               Amo estar sempre em crescente aprendizagem.
             </p>
           </div>
-        </div>
-      </motion.div>
-
-      {/* Right Column: Portrait Photo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="lg:col-span-5 flex justify-center lg:justify-end"
-      >
-        <div className="w-full max-w-85 sm:max-w-95 lg:max-w-105">
-          <SlideFrame
-            src={developerInfo.images.profile}
-            alt="Jaquison Souza - Sobre Mim"
-            aspect="aspect-[4/5] sm:aspect-[4/5]"
-          />
         </div>
       </motion.div>
     </div>
